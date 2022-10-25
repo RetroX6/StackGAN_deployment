@@ -1,2 +1,2 @@
 # StackGAN_GCP
-Used GCP platform for training the Stage-II GAN 
+Using Streamlit web app to deploy the StackGAN model 
