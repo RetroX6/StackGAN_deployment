@@ -1,7 +1,6 @@
 torch
 numpy
 pandas
-os
 matplotlib
 random
 argparse
