@@ -1,7 +1,6 @@
 torch
 numpy
 pandas
-PIL
 os
 matplotlib
 random
