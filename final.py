@@ -469,12 +469,12 @@ def final_fun(loader):
     #load the saved model 
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     G1 = G_Stage1().to(device)
-    G1checkpoint = torch.load('txt - img/results/netG_epoch_600.pth')
+    G1checkpoint = torch.load('results/netG_epoch_600.pth')
     G1.load_state_dict(G1checkpoint)
     G1.eval()
 
     netG = G_Stage2(G1).to(device)
-    G2checkpoint = torch.load('txt - img/results2/results2_netG2_epoch_420.pth')
+    G2checkpoint = torch.load('results2/results2_netG2_epoch_420.pth')
     netG.load_state_dict(G2checkpoint)
     netG.eval()
     
