@@ -215,7 +215,6 @@ def weights_init(m):
         nn.init.normal_(m.weight.data, 1.0, 0.02)
         nn.init.constant_(m.bias.data, 0)
         
-CUDA = True
 cond_dim = 128
 df_dim = 128
 gf_dim = 128
@@ -279,10 +278,7 @@ class CondAugment_Model(nn.Module):
     def forward(self, x):
         mean, sigma = self.convert(x)
         diag = torch.exp(sigma*0.5)
-        if CUDA:
-            normal_dis = (torch.FloatTensor(diag.size()).normal_()).cuda()
-        else:
-            normal_dis = (torch.FloatTensor(diag.size()).normal_())
+        normal_dis = (torch.FloatTensor(diag.size()).normal_())
         condition = (diag*normal_dis)+mean
         return condition, mean, sigma
 
