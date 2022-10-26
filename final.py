@@ -468,7 +468,7 @@ class D_Stage2(nn.Module):
 def final_fun(loader):
     
     #load the saved model 
-    device = 'cuda' if torch.cuda.is_available() else 'cpu'
+    device = torch.device('cpu')
     G1 = G_Stage1().to(device)
     G1checkpoint = torch.load('results/netG_epoch_600.pth', map_location=torch.device('cpu'))
     G1.load_state_dict(G1checkpoint)
