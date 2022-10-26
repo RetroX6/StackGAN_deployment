@@ -128,7 +128,8 @@ class BirdDataset(data.Dataset):
     
     def __getitem__(self, idx):
         key = self.filenames[idx]
-        
+        key = key[:-1]
+       
         if self.bbox is not None:
             bbox = self.bbox[key]
         else:
