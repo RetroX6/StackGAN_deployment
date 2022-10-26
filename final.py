@@ -135,7 +135,7 @@ class BirdDataset(data.Dataset):
         else:
             bbox = None
         emb = self.caps[idx, :, :]
-        imagePath = os.path.join(self.dataDir,'birds', 'CUB_200_2011', 'images',self.filenames[idx]+'.jpg')
+        imagePath = os.path.join(self.dataDir,'birds', 'CUB_200_2011', 'images',key +'.jpg')
         image = self.get_img(imagePath, bbox)
         
         # random select a sentence
